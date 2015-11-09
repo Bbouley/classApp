@@ -13,7 +13,7 @@ describe('server router', function() {
         .get('/')
         .end(function(err, res) {
             res.should.have.status(200);
-            res.text.should.have.string('<p>Welcome to Express</p>');
+            res.text.should.have.string('<p>Welcome to Title Of Things</p>');
             done();
         });
     });
