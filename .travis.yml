@@ -1,14 +1,17 @@
 language: node_js
-
 node_js:
- - "4.1"
- - "4.0"
- - "0.12"
- - "0.11"
-
+- '4.1'
+- '4.0'
+- '0.12'
+- '0.11'
 services: mongodb
-
 before_script:
- - npm install -g mocha
-
+- npm install -g mocha
 script: mocha
+deploy:
+  provider: heroku
+  api_key:
+    secure: dzNeCbP9WXXMk029Bz4ygZLiFfAtdO1r5jjewbX1JakrH8NwAWyBqLj3BsEyjKtyd6TPhYkClZD875WqP2b9tOS6SU/mrW9hL/SsawH14I44zQh0fwPNtMMDsFioX6htK3CKIPApS9w/c8tMCNoGxzszc+WRKZDmnNSDbSJ/L8R/CH3m5vcSnIH5HVySXU4plOg+P8eZPZFrNL8nWcxUc54M+ZvYzPJDbTa98stZO75ZUNvThVlKnlrks13AleIDKMisWUBeW9el0jaP2AUaQNV0qvkqvIQ1YV1Ljr7Vm/+Gu0yNmid8mysqckOPcTSFtzaCxKjR7DeVe/oy1ZpOAp+op/23+FmslKqdZ4WDtvzCZu3bBGPgXsIpj6Rn+/dedAUoXcuv9RhdtepvxngyToE7RK13Q+TneT8caECNs7XLrziD8Xhxx4g0heZYH7J1QZiV7Qe0S/KEJudTI4I61GAyfy0B5EErMQcjAQvIEZJmp5IKFCOMcMM7/WJODzl+z3RdNH7XgVrk4imzNo2a2dihegF1Kk4ZUwWEQmCQGJ0h5f/Pn6fB1ZpgBtPsi8r7ZNyOSjg1naefrideBvVwaXPYr/hAfB4Ty/KQQyfLQKoNu/cjoBKSoR1ouHxokJReVwtdsHmqLrQb52qn51PMz17sFfkE6f0PpGcU7Nkw6ik=
+  app: guest-person
+  on:
+    repo: Bbouley/classApp
